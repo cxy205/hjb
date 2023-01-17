@@ -61,9 +61,5 @@ public class hjbServlet extends HttpServlet {
     protected void service(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         System.out.println("---执行了service---");
         processData(request,response);
-        PrintWriter out=response.getWriter();
-        out.write("1111");
-        out.flush();
-        out.close();
     }
 }
