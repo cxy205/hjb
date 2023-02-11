@@ -15,4 +15,6 @@ Python文件存放在项目中main/utils/python文件夹中，修改此路径为
 
 同时启动本机neo4j，后端服务器和微信小程序前端，可实现对话功能。
 
-<img width="240" alt="image" src="https://user-images.githubusercontent.com/73516636/212841704-4f567020-8327-4b46-a7cf-41cc7b2e1be1.png">
+<img width="237" alt="image" src="https://user-images.githubusercontent.com/73516636/218274212-25e96ad4-af0c-494a-a816-d6520304b323.png">
+
+目前使用的匹配方法为协同过滤，计算节点的jaccard相似度进行排序
