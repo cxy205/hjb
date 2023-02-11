@@ -16,9 +16,12 @@ class Answer:
         :param res_par: [('白化病', 'symptom_part', 'match (a)-[r:表现]-(b) where a.name="白化病" return b.name')]
         :return:
         '''
-        if not res_par:
+        if res_par=='null':
             return '抱歉，暂时不能正确您的问题，请转接人工服务~'
+        else:
+            return '您可能患有的疾病为'+res_par
 
+        '''
         response = ''
         for res in res_par:
             # 查询数据库
@@ -39,6 +42,8 @@ class Answer:
                 return response
             else:
                 return '抱歉，暂时不能正确您的问题，请转接人工服务~'
+        '''
+
 
 
 

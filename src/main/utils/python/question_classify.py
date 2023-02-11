@@ -94,8 +94,8 @@ class QClassifier:
                 if wd1 in wd2 and wd1 != wd2:
                     remove_words.append(wd1);
         final_words = [i for i in entities if i not in remove_words]
-        medical_dic = {i: self.wdtype_dic.get(i) for i in final_words}
-        return medical_dic
+        sym_dic = [i for i in final_words if i in self.feature_words]
+        return sym_dic
 
     def detect_type(self, question_words, question):
         '''
@@ -116,16 +116,15 @@ class QClassifier:
         :return:
         '''
         # 检测文问句中的实体
-        medical_dic = self.check_entity(question)
+        sym_dic = self.check_entity(question)
+        return sym_dic
         # 获取问题类型
-        question_types = []
+        #question_types = []
         # 判断是否在范围内
-        if (self.detect_type(self.belongs_ques, question)):
-            question_types.append('disease_part')
-        if (self.detect_type(self.symptom_ques, question)):
-            question_types.append('symptom_part')
+        #if (self.detect_type(self.belongs_ques, question)):
+            #question_types.append('disease_part')
+        #if (self.detect_type(self.symptom_ques, question)):
+           # question_types.append('symptom_part')
 
-        if medical_dic and question_types:
-            return {'entities': medical_dic, 'question_types': question_types}
-
-        return {}
+        #if medical_dic and question_types:
+        #return {'entities': medical_dic, 'question_types': question_types}
